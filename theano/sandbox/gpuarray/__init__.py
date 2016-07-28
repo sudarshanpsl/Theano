@@ -71,11 +71,11 @@ def init_dev(dev, name=None):
             cudnn_version = " (cuDNN not available)"
             try:
                 cudnn_version = dnn.version()
-                # 5100 should not print warning with cudnn 5 final.
-                if cudnn_version > 5100:
+                # 5200 should not print warning with cudnn 5 final.
+                if cudnn_version > 5200:
                     warn = ("Your cuDNN version is more recent than Theano."
                             " If you see problems, try updating Theano or"
-                            " downgrading cuDNN to version 5.")
+                            " downgrading cuDNN to version 5.1.")
                 cudnn_version = " (cuDNN version %s)" % cudnn_version
             except Exception:
                 cudnn_version = dnn.dnn_present.msg
